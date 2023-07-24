@@ -9,18 +9,12 @@
 # shells on the sea shore I'm sure that the shells are sea
 # shore shells
 # Output: 13
-s = "She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells sea shells on the sea shore I'm sure that the shells are sea shore shells"
+ss = "She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells sea shells on the sea shore I'm sure that the shells are sea shore shells"
 #
-listW=[]
-k1 =0
-while k1 < len(listW) :
-    while s[k1]==" " and k1<len(s) : 
-        k1 +=1  
-    k2 = k1
-    while s[k2+1]!=" " and k2+1<len(s) :
-        k2 +=1
-    listW.append(s[k1,k2])
-    k1=k2+1
-print(len(listW))
-print(listW)
-
+print("дана строка длины ",len(ss))
+print(ss)
+listW=(ss.lower().split())
+print("слов в строке всего =",len(listW))
+se = set(listW)
+print(se)
+print("различных слов",len(se))
