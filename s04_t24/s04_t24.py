@@ -12,16 +12,25 @@
 # собрать за один заход собирающий модуль, находясь перед некоторым кустом
 # заданной во входном файле грядки.
 #
-# для заданного списка listA длины lL требуется определить индекс ibest. 0<=ibest<lL, такой, чтобы
-# сумма трех элементов listA[(ibest-1)%lL]+listA[ibest%lL]+listA[(ibest+1)%lL] была наибольшей
-# по сравнению с суммой listA[(i-1)%lL]+listA[i%lL]+listA[(i+1)%lL] любого другого индекса
-#listA = []
-listA= [5, 2, 3, 4, 4]
+# // для заданного списка listA длины lL требуется определить индекс ibest. 0<=ibest<lL, такой, чтобы
+# // сумма трех элементов listA[(ibest-1)%lL]+listA[ibest%lL]+listA[(ibest+1)%lL] была наибольшей
+# // по сравнению с суммой listA[(i-1)%lL]+listA[i%lL]+listA[(i+1)%lL] любого другого индекса
+#listA= [5, 2, 3, 4, 4]
+# задаем список значений "плодовитости" грядок с помощью генератора псевдослучайных чисел
+n = int(input("задайте число грядок (>3): "))
+listA = []
+import random
+for i in range(n) :
+        listA.append(random.randint(0,9))
+print("данные о произвдительности:")
+print(listA)
 ibest =0
 best = listA[-1]+listA[0]+listA[1]
+print("для ",ibest," значения критерия =",best)
 lL=len(listA)
 for i in range(1,len(listA)) :
     d = listA[(i-1)%lL]+listA[i%lL]+listA[(i+1)%lL]
+    print("для ",i," значения критерия =",d)
     if d > best :
         ibest = i
         best = d
